@@ -10,15 +10,22 @@
       <% else %>
         <h3>
           <% if SetupWizard.next_step == SetupWizard::STEPS.first %>
-          Would you like some help setting up this project?
+          Would you like some help setting up your project?
           <% else %>
           You’re still in the setup process. Want to pick up where you left off?
           <% end %>
         </h3>
+        <p>
+          <% if SetupWizard.next_step == SetupWizard::STEPS.first %>
+          It's brief, we promise.
+          <% else %>
+          You’re almost done!
+          <% end %>
+        </p>
         <div class="setup-helper__buttons">
           <% if SetupWizard.next_step == SetupWizard::STEPS.first %>
-            <%= link_to 'Yes, help out', setup_next_step_path, class: 'btn btn-large' %>
-            <%= link_to 'No thanks', setup_complete_path(show_completed: false), class: 'btn btn-large btn-primary' %>
+            <%= link_to 'Yes, help out', setup_next_step_path, class: 'btn btn-large btn-primary' %>
+            <%= link_to 'No thanks', setup_complete_path(show_completed: false), class: 'btn btn-large' %>
           <% else %>
             <%= link_to 'Yes, let’s finish!', setup_next_step_path, class: 'btn btn-large' %>
             <%= link_to 'No thanks', setup_complete_path(show_completed: true), class: 'btn btn-large btn-primary' %>
@@ -27,5 +34,5 @@
       <% end %>
     </div>
   </div>
-  <%= image_tag 'logo_small.png', class: 'setup-helper__logo', size: '200x200' %>
+  <!-- <%= image_tag 'logo_small.png', class: 'setup-helper__logo', size: '200x200' %> -->
 </div>
