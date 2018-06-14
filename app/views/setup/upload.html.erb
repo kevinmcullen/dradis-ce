@@ -1,17 +1,25 @@
-<% content_for :title, 'Guided Setup: Step 3 of 3' %>
 
-<section class="setup__step">
 
-  <%= image_tag 'logo_tiny.png' %>
+<section class="setup-helper">
+  <div class="setup-helper__bubble">
+    <div class="setup-helper__content">
+      <div class="progress-bar">
 
-  <div class="setup__ballon">
-    <h2>Last step! Do you want to upload the output of a security scanner?</h2>
+        <div class="progress-bar__bar complete step-one"></div>
+        <div class="progress-bar__bar complete"></div>
+        <div class="progress-bar__bar complete">
+            <div class="progress-bar__bar_label"><p>Last Step!</p><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+        </div>
+        <!-- <div class="progress-bar__bar"></div> // Last Bar Has Rounded Right Edges-->
 
-    <p>The next step is to select the tool name and pick the file.</p>
+      </div>
+      <h2>Do you want to upload the<br> output of a security scanner?</h2>
+      <p>&lpar;You know the drill. You can just skip it for now if you don’t.&rpar;</p>
 
-    <div class="setup__buttons">
-      <%= link_to 'Yes I do', '', class: 'btn btn-large' %>
-      <%= link_to 'Not now', setup_complete_path(show_completed: true),  class: 'btn btn-large btn-primary' %>
+      <div class="setup-helper__buttons">
+        <%= link_to 'Yes I do', '', class: 'btn btn-large btn-primary' %>
+        <%= link_to 'Not now', setup_complete_path(show_completed: true),  class: 'btn btn-large' %>
+      </div>
     </div>
   </div>
 </section>

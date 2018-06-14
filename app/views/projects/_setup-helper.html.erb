@@ -1,4 +1,4 @@
-<div class="setup-helper" data-behaviour="setup-helper">
+<section class="setup-helper" data-behaviour="setup-helper">
   <div class="setup-helper__bubble">
     <div class="setup-helper__content">
       <% if flash[:show_completed] %>
@@ -27,12 +27,12 @@
             <%= link_to 'Yes, help out', setup_next_step_path, class: 'btn btn-large btn-primary' %>
             <%= link_to 'No thanks', setup_complete_path(show_completed: false), class: 'btn btn-large' %>
           <% else %>
-            <%= link_to 'Yes, let’s finish!', setup_next_step_path, class: 'btn btn-large' %>
-            <%= link_to 'No thanks', setup_complete_path(show_completed: true), class: 'btn btn-large btn-primary' %>
+            <%= link_to 'Yes, let’s finish!', setup_next_step_path, class: 'btn btn-large btn-primary' %>
+            <%= link_to 'No thanks', setup_complete_path(show_completed: true), class: 'btn btn-large' %>
           <% end %>
         </div>
       <% end %>
     </div>
   </div>
   <!-- <%= image_tag 'logo_small.png', class: 'setup-helper__logo', size: '200x200' %> -->
-</div>
+</section>

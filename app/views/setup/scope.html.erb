@@ -1,15 +1,25 @@
-<% content_for :title, 'Guided Setup: Step 2 of 3' %>
 
-<section class="setup__step">
 
-  <%= image_tag 'logo_tiny.png' %>
+<section class="setup-helper">
+  <div class="setup-helper__bubble">
+    <div class="setup-helper__content">
+      <div class="progress-bar">
 
-  <div class="setup__ballon">
-    <h2>Next, do you have a list of hosts in scope for this assessment?</h2>
+        <div class="progress-bar__bar complete step-one"></div>
+        <div class="progress-bar__bar complete">
+            <div class="progress-bar__bar_label"><p>Getting close</p><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+        </div>
+        <!-- <div class="progress-bar__bar"></div> // Last Bar Has Rounded Right Edges-->
+        <!-- <div class="progress-bar__bar"></div> // Last Bar Has Rounded Right Edges-->
+      </div>
 
-    <div class="setup__buttons">
-      <%= link_to 'Yes I do', '', class: 'btn btn-large' %>
-      <%= link_to 'Not now', setup_next_step_path,  class: 'btn btn-large btn-primary' %>
+      <h2>Do you have a list of hosts<br>in scope for this assessment?</h2>
+      <p>&lpar;Again. It’s cool if you don’t, you can just skip it for now.&rpar;</p>
+
+      <div class="setup-helper__buttons">
+        <%= link_to 'Yes I do', '', class: 'btn btn-large btn-primary' %>
+        <%= link_to 'Not now', setup_next_step_path,  class: 'btn btn-large' %>
+      </div>
     </div>
   </div>
 </section>

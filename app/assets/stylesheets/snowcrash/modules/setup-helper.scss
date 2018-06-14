@@ -1,43 +1,44 @@
-body.projects.show {
-  .setup-helper {
-    margin: 0 0 20px;
-    display: block;
-    position: relative;
-    z-index: 9;
+.setup-helper {
+  margin: 30px 0 20px;
+  display: block;
+  position: relative;
+  z-index: 9;
 
-    .setup-helper__bubble {
-      padding: 30px;
-      background: #fff;
-      border: 1px solid #285d28;
-      color: #34495e;
-      text-align: center;
+  .setup-helper__bubble {
+    padding: 80px 30px 30px;
+    background: #fff;
+    border: 1px solid #285d28;
+    color: #34495e;
+    text-align: center;
 
-      .setup-helper__content {
-        display: flex;
-        flex-direction: column;
+    .setup-helper__content {
+      display: flex;
+      flex-direction: column;
 
-        .setup-helper__buttons {
-          padding: 1em 1.5em 0;
-        }
-
-        h3 {
-          margin: 0 0 20px;
-        }
-
-        p {
-          margin: 0 0 30px;
-        }
+      .setup-helper__buttons {
+        padding: 1em 1.5em 0;
       }
-    }
 
-    .setup-helper__logo {
-      position: absolute;
-      top: 100%;
-      right: 50%;
-      margin-right: -13.5rem;
-      margin-top: -0.5rem;
+      h3 {
+        margin: 0 0 20px;
+      }
+
     }
   }
+
+  .setup-helper__logo {
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    margin-right: -13.5rem;
+    margin-top: -0.5rem;
+  }
+}
+
+
+.setup-info {
+  width: 50%;
+  margin: auto;
 }
 
 .setup-helper__buttons .btn {
@@ -77,4 +78,71 @@ body.setup {
       }
     }
   }
+}
+
+.progress-bar {
+  height: 8px;
+  width: 40%;
+  margin: 0 auto 20px;
+  border-radius: 4px;
+  background-color: $grayLight;
+  position: relative;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.progress-bar__bar {
+    width: 25%;
+}
+
+
+.progress-bar__bar.complete:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.progress-bar__bar.complete:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.progress-bar__bar.complete.step-one {
+  border-radius: 4px;
+}
+
+.progress-bar__bar.complete:not(:first-child):before {
+    content: '';
+    height: 8px;
+    width: 2px;
+    position: relative;
+    left: -2px;
+    background-color: $green;
+    display: block;
+}
+
+.progress-bar__bar.complete {
+  height: 100%;
+  width: 25%;
+  background-color: $green;
+  float: left;
+}
+
+.progress-bar__bar.complete.step-one {
+  border-radius: 4px;
+}
+
+.progress-bar__bar_label {
+  position: relative;
+  top: -60px;
+  right: -50%;
+}
+
+@keyframes point {
+  0%   { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+.progress-bar__bar_label i {
+  animation: point 1.2s ease-out infinite;
 }
