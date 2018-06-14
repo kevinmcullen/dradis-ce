@@ -8,6 +8,13 @@
           <button data-behaviour="dismiss_setup_helper" class="btn btn-large">Got It!</button>
         </div>
       <% else %>
+      <div class="progress-bar">
+        <div class="progress-bar__bar_label start"><p>Just starting</p><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+        <!-- <div class="progress-bar__bar complete step-one"></div> -->
+        <!-- <div class="progress-bar__bar"></div> // Last Bar Has Rounded Right Edges-->
+        <!-- <div class="progress-bar__bar"></div> // Last Bar Has Rounded Right Edges-->
+        <!-- <div class="progress-bar__bar"></div> // Last Bar Has Rounded Right Edges-->
+      </div>
         <h3>
           <% if SetupWizard.next_step == SetupWizard::STEPS.first %>
           Would you like some help setting up your project?

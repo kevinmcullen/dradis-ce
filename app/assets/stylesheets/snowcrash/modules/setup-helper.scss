@@ -131,6 +131,10 @@ body.setup {
   border-radius: 4px;
 }
 
+.progress-bar__bar_label.start {
+  left: -50%;
+}
+
 .progress-bar__bar_label {
   position: relative;
   top: -60px;
