@@ -15,7 +15,7 @@
       <p>&lpar;It’s OK if you don’t, you can just skip it for now and update it later.&rpar;</p>
 
       <div class="setup-helper__buttons">
-        <%= link_to 'Yes I do', add_methodology_path(Methodology.all.first), class: 'btn btn-large btn-primary' %>
+        <%= link_to 'Yes I do', add_methodology_path(Methodology.all.first, origin: 'setup-wizard'), class: 'btn btn-large btn-primary' %>
         <%= link_to 'Not now', setup_next_step_path,  class: 'btn btn-large' %>
       </div>
     </div>

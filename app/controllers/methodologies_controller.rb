@@ -102,7 +102,7 @@ class MethodologiesController < ProjectScopedController
   end
 
   def show_setup_helper?
-    @setup_show = SetupWizard.show?
+    @setup_show = SetupWizard.show? && params[:origin] == 'setup-wizard'
   end
 
   # Use XPath's concat() to deal with quotes
