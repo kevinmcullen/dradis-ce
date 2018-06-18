@@ -2,6 +2,7 @@ class MethodologiesController < ProjectScopedController
 
   before_action :find_methodologylib
   before_action :find_methodology, only: [:edit, :update, :update_task, :destroy]
+  before_action :show_setup_helper?, only: [:add]
 
   def index
     @methodologies = []
@@ -25,7 +26,12 @@ class MethodologiesController < ProjectScopedController
     @methodologylib.notes.create(author: 'methodology builder', text: @methodology.content, category: Category.default)
 
     flash[:info] = "'#{old_name}' added as '#{new_name}'"
-    redirect_to methodologies_path
+
+    if SetupWizard.show?
+      redirect_to setup_next_step_path
+    else
+      redirect_to methodologies_path
+    end
   end
 
   def edit
@@ -93,6 +99,10 @@ class MethodologiesController < ProjectScopedController
 
   def methodology_params
     params.require(:methodology).permit(:content, :name)
+  end
+
+  def show_setup_helper?
+    @setup_show = SetupWizard.show? && params[:origin] == 'setup-wizard'
   end
 
   # Use XPath's concat() to deal with quotes
