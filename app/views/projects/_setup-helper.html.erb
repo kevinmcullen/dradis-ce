@@ -1,6 +1,7 @@
 <section class="setup-helper" data-behaviour="setup-helper">
   <div class="setup-helper__bubble">
     <div class="setup-helper__content">
+      <%= link_to '', setup_complete_path(show_completed: false), class: 'close fa fa-times' %>
       <% if flash[:show_completed] %>
         <h3>You’re off to a great start!</h3>
         <p>You’ll see everything you added in the links on the left sidebar.</p>
